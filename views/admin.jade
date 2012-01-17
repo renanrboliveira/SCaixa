@@ -1,0 +1,56 @@
+!!! 5
+html(lang="pt-bt")
+	head
+		title = title
+		link(rel='stylesheet', href='bootstrap/bootstrap.css')
+		link(rel='stylesheet', href='css/admin.css')
+		
+		script(src="development-bundle/jquery-1.6.2.js")
+		script(src="development-bundle/ui/jquery-ui-1.8.16.custom.js")
+		script(src="bootstrap/js/bootstrap-dropdown.js")
+		script(src="bootstrap/js/bootstrap-modal.js")
+		script(src="bootstrap/js/bootstrap-alerts.js")
+		script(src="javascripts/actions.js")
+		script(src="javascripts/jquery.monetarymask.js")
+		script(src="javascripts/jquery.validate.js")
+		
+
+	body
+		include addEntrada
+		div.topbar
+			div.fill
+				div.container
+					a.brand(href='/') SCaixa
+					ul.nav
+						a(href='#') Seja bem vindo ao sistema de caixa
+	
+		div.container
+			div.content
+				div.page-header
+					h1 Logo
+					p Estou apenas testando
+					div.dados
+
+						h3 Entradas: R$ #{somaEnt}
+						h3.fSaida Saídas: R$ #{somaSai}
+						h4 Total do Dia : R$ #{somaEnt+somaSai}
+				div.row
+					div.span4
+						button.btn.info#add-ent Cadastrar Entrada
+						br
+						br
+						button.btn.primary#list-ent Entradas
+						br
+						br
+						button.btn.primary#list-sai Saídas
+						br
+						br
+						button.btn.danger#relatorio Relatórios
+						br
+						br
+						button.btn.success#relatorio Configurações
+		
+					div.span10
+						include list_entrada
+						include list_saida
+

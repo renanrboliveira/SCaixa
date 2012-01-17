@@ -1,0 +1,34 @@
+!!! 5
+html(lang="pt-br")
+  head
+    title SC Caixa - Sistema de controle financeiro
+    link(rel='stylesheet', href='bootstrap/bootstrap.css')
+    link(rel='stylesheet', href='css/login.css')
+    script(src="development-bundle/jquery-1.6.2.js")
+    script(src="development-bundle/ui/jquery-ui-1.8.16.custom.js")
+
+    script
+      $(document).ready(function() {
+        $("#btn").click(function() {
+          document.getElementById('warning').style.visibility = 'visible';
+          $("#well").toggle("shake", {times: 5}, 30);
+          });
+        });
+  body
+    div.container
+      h1.logo SCaixa
+      div.well(id="well")
+        form.form-stacked
+          fieldset
+            legend Login
+            div.clearfix
+              label Login
+              div.input
+                input.large(type='text')
+              label Senha
+              div.input
+                input.large(type='password')
+                p#warning Senha ou user inválidos!
+              input.btn.primary(id="btn",type='button', value="Entrar")
+            
+

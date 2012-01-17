@@ -1,0 +1,28 @@
+div.modal.hide.fade#add-ent-modal
+	div.modal-header
+		h3= title
+		div.modal-body
+			form.form-stacked(id="formProduto", method="post")
+				fieldset#fieldset
+					legend Novo Produto
+					div.clearfix
+						label Nome
+						div.input
+							input.large.required#nome(type='text',name='nome', id='nome')
+							label#erro-nome nome nao pode ser vazio
+						label Descriminação
+						div.input
+							input.large#descriminacao(type='text',name='descriminacao', id='descriminacao')
+						label Valor
+							div.input
+								input.mini#valor(type='text',name='valor',id='valor', onKeyUp="ponto(this)")
+						label Tipo
+							div.input
+								select
+									option(value='entrada', id="entrada") Entrada
+									option(value='saida', id="saida") Saída
+									
+						
+		div.modal-footer
+			button.btn.primary#ok-produto Ok
+			button.btn.secondary#pro-cancel Cancelar

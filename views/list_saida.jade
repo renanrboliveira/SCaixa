@@ -1,0 +1,21 @@
+div#list-saida
+	center
+		h2 Saídas do Dia
+	br
+	table.bordered-table.zebra-striped
+		thead
+			tr
+				th Nome
+				th Descriminação
+				th Tipo
+				th Data
+				th Valor
+		tbody
+			- each produto in produtos
+				tr
+					if(produto.tipo == 'saida' & produto.data == date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear())
+						td= produto.nome
+						td= produto.descriminacao
+						td= produto.tipo
+						td= produto.data
+						td #{'R$ '+produto.valor}

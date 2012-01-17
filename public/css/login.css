@@ -1,0 +1,48 @@
+a {
+    margin: 33px;
+}
+
+body {
+    background: -webkit-linear-gradient(top, #C0C0C0, #FFFFFF);
+    background: -moz-linear-gradient(top, #C0C0C0, #FFFFFF);
+    height: 650px;
+}
+
+#warning {
+    margin-top:5px;
+    float: left;
+    color: red;
+    visibility: hidden;
+}
+
+.well {
+    box-shadow: 3px 5px 5px rgb(168,168,168);
+    width: 260px;
+    height: 170px;
+    position: absolute;
+    margin-left: 315px;
+    top: 240px;
+}
+
+.sub {
+    top: 120px;
+    position: relative;
+    padding-left: 330px;
+}
+
+.logo {
+    top: 90px;
+    position: relative;
+    padding-left: 290px;
+    font-family: PT Banana Split;
+    font-size: 10em;
+}
+.clearfix {
+    width: 220px;
+    height: 130px;
+}
+
+.btn.primary {
+    margin-top: 5px;
+    float: right;
+}
