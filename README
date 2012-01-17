@@ -1,0 +1,24 @@
+Esse é um sistema de gerenciamento financeiro diário, tem o intuito de auxiliar o cliente em cadastro de produtos, dando
+uma visão de valores de entradas e saídas do dia. Ele também pode solicitar o relatório diário, mensal ou intervalos de
+datas.
+
+
+Na primeira versão push ele contém as seguintes funcionalidades:
+
+Cadastra Entrada e Saída;
+Mostra os valores de entrada, saída e total do dia;
+Mostra as entradas e saídas, visualizadas em tabelas.
+
+TODO
+
+-Relatórios:
+Implementar o gerador de pdf para impressão do relatório;
+Relatório com gráficos;
+
+-Refatorar
+
+-Implementar Mais funcionalidades 
+
+
+
+Esse projeto utiliza tecnologias, node.js, express.js, jade, jquery, mongoose(MongoDB).
