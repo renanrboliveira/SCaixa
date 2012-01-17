@@ -11,7 +11,9 @@ Mostra as entradas e saídas, visualizadas em tabelas.
 
 TODO
 
--Relatórios:
+//DOING
+-Relatórios: 
+
 Implementar o gerador de pdf para impressão do relatório;
 Relatório com gráficos;
 
