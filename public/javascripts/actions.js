@@ -132,6 +132,7 @@ $(function() {
             	for (var i = 0; i < tags.length; i++) {
              		tags[i].reset();
             	}
+
 			}else{
 			
 				$('#erro-nome').show();
