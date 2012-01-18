@@ -36,6 +36,12 @@ function ProdutoController(){
 		});
 	}
 	
+	this.getAllDate = function(dateReq, callback){
+		produtoDao.getAllByDate(dateReq, function(err, all){
+			callback(err, all);
+		})
+	}
+	
 	this.getValorEntrada = function(callback){
 		var date = new Date();
 		var totalEnt = 0, totalSai = 0;

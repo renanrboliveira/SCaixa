@@ -44,79 +44,82 @@ app.get('/show/produto', function(req, res){
 	res.redirect('/');
 	
 });
+
+app.get('/show/relatorio', function(req, res){
+	
+	console.log('> ' + req.param.id);
+
+	produtoController.getAllDate(req.body.date, function(err, docs){
+		
+		res.render('list_relatorio', {
+			locals: {relatorios: docs}
+			,layout: false
+		});
+		
+		
+	});
+	
+});
+
+app.get('/relatorio', function(req, res){
+	
+	produtoController.getAllDate(req.body.date, function(err, docs){
+		
+		teste = docs; 	
+		
+	});
+	
+});
+
+var teste = [];
 app.post('/relatorio', function(req, res){
 		
-	res.render('admin');
+	console.log(req.body.date);	
+
+	produtoController.getAllDate(req.body.date, function(err, docs){
+		
+		teste = docs;
+		
+	});
+	
+	
 	
 });
 
 app.post('/new/produto', function(req, res) {
 	
-	
 		facade.addProduto(req);
 
-});
-
-
-
-app.get('/new/pessoa', function(req, res){
-
-	//pessoaController.add(req);	
-
-});
-
-app.get('/show/pessoa', function(req, res){
-	
-	
-});
-
-app.get('/teste', function(req, res){
-	
-	res.render('teste', {locals: {
-		facade: facade.getProdutoAll
-	}, layout:false});
-	
 });
 
 app.get('/', function(req, res){
 	
 	var somaEntrada = 0, somaSaida = 0;
-	
+	console.log(teste);
 	produtoController.getValorEntrada(function(ent, sai){
 		somaEntrada = ent;
 		somaSaida = sai;
 	});
 	
-	
 	facade.getProdutoAll(function(err, docs){
 		
 		res.render('admin',{
-
-			title: "SCaixa - Controle Financeiro",
+			
+			title: "SCaixa - Controle Financeiro Diário",
 
 			locals: {
 				produtos: docs,
 				somaEnt: somaEntrada,
 				somaSai: somaSaida,
+				relatorios: teste
 			}, 
 
 			layout:false
-
-		});
-		
-	});
-	
-
-	
-});
-
-app.get('/produto/:id', function(req, res){
-	facade.getProdutoById(req, function(err, doc){
-		console.log(doc.getId);
-		res.end(String(doc.getId));
+		});	
 	});
 		
 });
+
 
 
 app.listen(3000);

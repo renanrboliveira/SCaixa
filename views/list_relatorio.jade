@@ -1,7 +1,6 @@
-div#list-entrada
+div#list-relatorio
 	center 
-		- var date = new Date()
-		h2 Entradas do Dia !{date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()}
+		h2 Relatorio do Dia !{relatorios[0].data}
 	br
 	table.bordered-table.zebra-striped
 		thead
@@ -12,11 +11,23 @@ div#list-entrada
 				th Data
 				th Valor
 		tbody
-		- each produto in produtos
-			tr
-				if(produto.tipo == 'entrada' & produto.data == date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear())
-					td= produto.nome
-					td= produto.descriminacao
-					td= produto.tipo
-					td= produto.data
-					td #{'R$ '+produto.valor}
+		- var soma = 0;
+		- if(relatorios.length != 0)
+			- each produto in relatorios
+				- if(produto.tipo == 'entrada')
+					tr
+						td= produto.nome
+						td= produto.descriminacao
+						td= produto.tipo
+						td= produto.data
+						td #{'R$ '+produto.valor}
+				- else
+					tr#erro-nome
+						td= produto.nome
+						td= produto.descriminacao
+						td= produto.tipo
+						td= produto.data
+						td #{'R$ '+produto.valor}
+		- else
+
+			h2#erro-nome Nada entrou ou saiu no dia solicitado.

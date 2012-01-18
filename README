@@ -21,6 +21,7 @@ Relatório com gráficos;
 
 -Implementar Mais funcionalidades 
 
+- Implementar configurações
 
 
 Esse projeto utiliza tecnologias, node.js, express.js, jade, jquery, mongoose(MongoDB).

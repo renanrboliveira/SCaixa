@@ -32,12 +32,17 @@ function ProdutoDao(){
 	this.getAll = function(callback){
 		
 		db.connect();
-		if(typeof callback != 'function')
-			throw new Error('Give me a callback function');
 		model.find({}, function(err, all){
 			callback(err, all);
 		});
 		
+	}
+	
+	this.getAllByDate = function(dateValue, callback){
+		db.connect();
+		model.find({data:dateValue}, function(err, all){
+			callback(err, all);
+		});
 	}
 	
 	this.getModel = function(){

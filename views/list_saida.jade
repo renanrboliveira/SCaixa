@@ -1,6 +1,7 @@
 div#list-saida
 	center
-		h2 Saídas do Dia
+		- var date = new Date()
+		h2 Saídas do Dia !{date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()}
 	br
 	table.bordered-table.zebra-striped
 		thead

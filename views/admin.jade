@@ -4,6 +4,7 @@ html(lang="pt-bt")
 		title = title
 		link(rel='stylesheet', href='bootstrap/bootstrap.css')
 		link(rel='stylesheet', href='css/admin.css')
+		link(rel='stylesheet', href='css/smoothness/jquery-ui-1.8.16.custom.css')
 		
 		script(src="development-bundle/jquery-1.6.2.js")
 		script(src="development-bundle/ui/jquery-ui-1.8.16.custom.js")
@@ -48,9 +49,11 @@ html(lang="pt-bt")
 						button.btn.danger#relatorio Relatórios
 						br
 						br
-						button.btn.success#relatorio Configurações
+						button.btn.success Configurações
 		
 					div.span10
 						include list_entrada
 						include list_saida
+						include filter_related
+						include list_relatorio
 
