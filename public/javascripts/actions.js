@@ -22,7 +22,26 @@ jQuery(function($){
 	$.datepicker.setDefaults($.datepicker.regional['pt-BR']);
 });
 
+var availableTags = [
+	"XEROX",
+	"RECARGA DE CELULAR",
+	"IMPRESSÃO",
+	"FOTOS",
+	"INTERNET",
+	"CHIP CLARO",
+	"CHIP OI",
+	"SORVETE",
+	"PICOLE",
+	"PEDIDO DA AVON",
+	"TRUFA",
+	"RECARGA DE CARTUCHO"
+];
+
 $(function() {
+
+	$( "#nome" ).autocomplete({
+		source: availableTags
+	});
 	
     $(document).ready(function() {		
 		

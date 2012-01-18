@@ -1,6 +1,7 @@
 div#list-relatorio
 	center 
-		h2 Relatorio do Dia !{relatorios[0].data}
+		- if(relatorios.length  != 0)
+			h2 Relatorio do Dia !{relatorios[0].data}
 	br
 	table.bordered-table.zebra-striped
 		thead
@@ -13,6 +14,7 @@ div#list-relatorio
 		tbody
 		- var soma = 0;
 		- if(relatorios.length != 0)
+
 			- each produto in relatorios
 				- if(produto.tipo == 'entrada')
 					tr
